@@ -7,41 +7,48 @@
     <script type="text/javascript" src="js/techcamp.js"></script>
     
     <script>
-
+        var lotsOfCircles = [];
+        
         function setup() {
             try {
-                // Code goes here
+                for (var i = 0; i < 10; i++) {
+                    lotsOfCircles[i] = new Circle("orange");
+                    lotsOfCircles[i].moveToSquare(i+1, i+1);
+                    board.add(lotsOfCircles[i]);
+                }
             }
             catch (error) {
                 logError(error);
-            }  
+            }
         }
         
         
-        function go() {
+        function flip() {
             try {
-                // Code goes here
+                // Loop through all the circles in the array and move them
+                for (var i = 0; i < 10; i++) {
+                    lotsOfCircles[i].moveToSquare(i+1,10-i);
+                }
             }
             catch (error) {
                 logError(error);
-            }  
+            }
+            
         }
         
     </script>
 </head>
 
 <body onload="init()">
-    <canvas id="theCanvas" width="800" height="600"></canvas>
+    <canvas id="theCanvas" width="500" height="500"></canvas>
     <div id="menu">
         <button type="button" onclick="setup()">
-            Setup
+            Setup Board
         </button>
-        <button type="button" onclick="go()">
-            Go
+        <button type="button" onclick="flip()">
+            Flip
         </button>
-        <button type="button" onclick="board.clear()">
-            Clear
-        </button>
+        
         <span id="errorMessage"></span>
     </div>
     

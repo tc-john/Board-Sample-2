@@ -7,14 +7,14 @@
         this.characters = [];
         this.items = [];
         
-        width = typeof width !== 'undefined' ? width : 800;
-        height = typeof height !== 'undefined' ? height : 600;
+        width = typeof width !== 'undefined' ? width : 500;
+        height = typeof height !== 'undefined' ? height : 500;
 
         this.x = this.y = 0;
         this.width = width;
         this.height = height;
 
-        this.grid.graphics.beginFill("grey").drawRect(0, 0, 800, 600, "grey");
+        this.grid.graphics.beginFill("grey").drawRect(0, 0, width, height, "grey");
         
         this.grid.graphics.setStrokeStyle(0.5);
         
@@ -83,6 +83,15 @@
         this.addChild(itemObject);
     }
     
+    Board.prototype.remove = function (itemObject) {
+        for (i = 0; i < this.items.length; i++) {
+            if (this.items[i].id == itemObject.id) {
+                this.items.splice(i, 1);
+                this.removeChild(itemObject);
+            }
+        }
+    }
+    
     
     window.Board = Board;
     
@@ -111,7 +120,7 @@
     
     //----------------------------------------------------------
  	// Define a Square
-    var Square = function(x, y, width, height, color) {
+    var Square = function(color, x, y, width, height) {
         x = typeof x !== 'undefined' ? x : 0;
         y = typeof y !== 'undefined' ? y : 0;
         width = typeof width !== 'undefined' ? width : Board.squareWidth;
@@ -132,7 +141,7 @@
     
     //----------------------------------------------------------
     // Define a Circle
-    var Circle = function(x, y, radius , color) {
+    var Circle = function(color, radius, x, y) {
         x = typeof x !== 'undefined' ? x : 0;
         y = typeof y !== 'undefined' ? y : 0;
         radius = typeof radius !== 'undefined' ? radius : (Board.squareWidth/2);
