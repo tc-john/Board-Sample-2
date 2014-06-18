@@ -453,3 +453,8 @@ function init() {
     window.board = new Board();
     window.stage.addChild(board); 
 }
+
+function logError(err) {
+    document.getElementById("errorMessage").innerHTML = err.message;
+    throw err;
+}

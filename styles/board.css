@@ -15,3 +15,8 @@ canvas {
 button {
 	margin: 3px;
 }
+
+#errorMessage {
+    color: red;
+    font-size: .8em;
+}
