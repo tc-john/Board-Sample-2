@@ -7,15 +7,9 @@
     <script type="text/javascript" src="js/techcamp.js"></script>
     
     <script>
-        //Code goes here
-        var roshan;
-        
-        
+
         function setup() {
-            board.setBoardConfiguration('a');
-            
-            roshan = new Roshan();
-            board.addCharacter(roshan);
+        
         }
         
         
@@ -36,18 +30,6 @@
         </button>
         <button type="button" onclick="go()">
             Go
-        </button>
-        <button type="button" onclick="roshan.walkRight()">
-            Right
-        </button>
-        <button type="button" onclick="roshan.walkLeft()">
-            Left
-        </button>
-        <button type="button" onclick="roshan.walkUp()">
-            Up
-        </button>
-        <button type="button" onclick="roshan.walkDown()">
-            Down
         </button>
         <button type="button" onclick="board.clear()">
             Clear
