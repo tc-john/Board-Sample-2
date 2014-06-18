@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Techcamp</title>
+    <link rel="stylesheet" type="text/css" href="styles/robots.css">
+    <script type="text/javascript" src="js/createjs-2013.12.12.min.js"></script>
+    <script type="text/javascript" src="js/techcamp.js"></script>
+    
+    <script>
+        //Code goes here
+        var roshan;
+        
+        
+        function setup() {
+            board.setBoardConfiguration('a');
+            
+            roshan = new Roshan();
+            board.addCharacter(roshan);
+        }
+        
+        
+        function go() {
+            
+    
+        }
+        
+    </script>
+</head>
+
+<body onload="init()">
+    <canvas id="theCanvas" width="800" height="600"></canvas>
+    <div id="menu">
+        <button type="button" onclick="setup()">
+            Setup
+        </button>
+        <button type="button" onclick="go()">
+            Go
+        </button>
+        <button type="button" onclick="roshan.walkRight()">
+            Right
+        </button>
+        <button type="button" onclick="roshan.walkLeft()">
+            Left
+        </button>
+        <button type="button" onclick="roshan.walkUp()">
+            Up
+        </button>
+        <button type="button" onclick="roshan.walkDown()">
+            Down
+        </button>
+        <button type="button" onclick="board.clear()">
+            Clear
+        </button>
+    </div>
+    
+</body>
+
+</html>
